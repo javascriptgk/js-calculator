@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript</title>
+	<style type="text/css">
+		td{
+			text-align: center;
+			padding: 20px;
+		}
+		td:hover{
+			color: white;
+			background: green;
+			cursor: pointer;
+		}
+		input{
+			padding: 10px;
+			text-align: right;
+		}
+		tbody{
+			background: red;
+			font-size: 22px;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<input type="text" name="res" id="res">
+		<table>
+		<tbody>
+			<tr>
+				<td onclick="btn_click('7')">7</td>
+				<td onclick="btn_click('8')">8</td>
+				<td onclick="btn_click('9')">9</td>
+				<td onclick="btn_click('+')">+</td>
+			</tr>
+			<tr>
+				<td onclick="btn_click('4')">4</td>
+				<td onclick="btn_click('5')">5</td>
+				<td onclick="btn_click('6')">6</td>
+				<td onclick="btn_click('-')">-</td>
+			</tr>
+			<tr>
+				<td onclick="btn_click('1')">1</td>
+				<td onclick="btn_click('2')">2</td>
+				<td onclick="btn_click('3')">3</td>
+				<td onclick="btn_click('*')">*</td>
+			</tr>
+			<tr>
+				<td onclick="btn_click('0')">0</td>
+				<td onclick="document.getElementById('res').value=''">CLR</td>
+				<td onclick="result()">=</td>
+				<td onclick="btn_click('/')">/</td>
+			</tr>
+		</tbody>
+	</table>
+	</center>
+	
+</body>
+<script type="text/javascript">
+	var res=document.getElementById('res');
+	function btn_click(x) {
+		res.value=res.value+x;
+	}
+	function result() {
+		res.value=eval(res.value);
+	}
+</script>
+</html>
